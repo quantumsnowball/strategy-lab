@@ -8,7 +8,7 @@ from trbox.strategy.context import Context
 
 SYMBOL = 'SPY'
 SYMBOLS = (SYMBOL, )
-START = '2000-01-01'
+START = '2015-01-01'
 END = None
 FREQ = '1d'
 LENGTH = [100, 200, 500, ]
@@ -65,6 +65,6 @@ bt = Backtest(
     ]
 )
 
-bt.run(parallel=False)
+bt.run(mode='process')
 
-bt.result.save()
+# bt.result.save()

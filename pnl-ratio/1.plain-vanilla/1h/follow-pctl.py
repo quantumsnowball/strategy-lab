@@ -65,6 +65,6 @@ bt = Backtest(
     ]
 )
 
-bt.run(parallel=True)
+bt.run(mode='process')
 
-bt.result.save()
+# bt.result.save()
