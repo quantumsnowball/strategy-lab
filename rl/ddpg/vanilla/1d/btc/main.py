@@ -5,7 +5,7 @@ import torch.optim as optim
 from gymnasium.spaces import Box
 from mlbox.agent.ddpg import DDPGAgent
 from mlbox.agent.ddpg.nn import DDPGActorNet, DDPGCriticNet
-from mlbox.trenv import TrEnv
+from mlbox.trenv import BasicTrEnv
 from mlbox.utils import crop, pnl_ratio
 from trbox.backtest import Backtest
 from trbox.broker.paper import PaperEX
@@ -73,7 +73,7 @@ def every(my: Context[OhlcvWindow]) -> None:
 #
 # Env
 #
-class MyEnv(TrEnv[Obs, Action]):
+class MyEnv(BasicTrEnv[Obs, Action]):
     # Env
     observation_space: Box = Box(low=0, high=1, shape=(N_FEATURE, ), )
     action_space: Box = Box(low=0, high=1, shape=(1, ), )
