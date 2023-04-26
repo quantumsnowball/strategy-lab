@@ -1,0 +1,248 @@
+2023-04-26 13:57:39.438784: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Start training the agent? ([y]/n):
+>>>
+##### | Episode   25 | train: -13.509546% | vald: -35.907703%
+##### | Episode   50 | train: -0.053721% | vald: -21.135186%
+##### | Episode   75 | train: -1.681398% | vald: -35.254036% [saved]
+##### | Episode  100 | train: +12.709862% | vald: -32.693699% [saved]
+##### | Episode  125 | train: +19.759047% | vald: -25.840593% [saved]
+##### | Episode  150 | train: +27.615011% | vald: -22.493491% [saved]
+##### | Episode  175 | train: +26.834617% | vald: -21.920103% [saved]
+##### | Episode  200 | train: +35.372938% | vald: -27.520971%
+##### | Episode  225 | train: +32.721764% | vald: -22.632334%
+##### | Episode  250 | train: +35.610563% | vald: -21.340052% [saved]
+##### | Episode  275 | train: +25.786795% | vald: -20.074677% [saved]
+##### | Episode  300 | train: +28.103181% | vald: -19.552265% [saved]
+##### | Episode  325 | train: +24.155027% | vald: -20.195589%
+##### | Episode  350 | train: +24.150750% | vald: -16.738176% [saved]
+##### | Episode  375 | train: +19.732048% | vald: -19.634079%
+##### | Episode  400 | train: +23.052038% | vald: -21.557189%
+##### | Episode  425 | train: +22.953405% | vald: -20.185232%
+##### | Episode  450 | train: +25.703502% | vald: -22.635482%
+##### | Episode  475 | train: +24.485558% | vald: -23.307131%
+##### | Episode  500 | train: +24.125819% | vald: -23.566990%
+##### | Episode  525 | train: +27.920998% | vald: -23.472588%
+##### | Episode  550 | train: +26.431887% | vald: -23.554372%
+##### | Episode  575 | train: +24.628736% | vald: -20.019856%
+##### | Episode  600 | train: +22.346765% | vald: -16.008898% [saved]
+##### | Episode  625 | train: +17.740393% | vald: -16.997133%
+##### | Episode  650 | train: +13.741123% | vald: -18.529237%
+##### | Episode  675 | train: +14.445778% | vald: -15.056059% [saved]
+##### | Episode  700 | train: +6.816291% | vald: -13.519351% [saved]
+##### | Episode  725 | train: +5.654276% | vald: -16.260321%
+##### | Episode  750 | train: +1.949538% | vald: -14.958710%
+##### | Episode  775 | train: +0.353926% | vald: -14.491067%
+##### | Episode  800 | train: -4.822548% | vald: -14.694325%
+##### | Episode  825 | train: +0.354969% | vald: -14.763011%
+##### | Episode  850 | train: -2.201391% | vald: -16.434950%
+##### | Episode  875 | train: +0.265410% | vald: -18.250870%
+##### | Episode  900 | train: +1.099366% | vald: -14.901534%
+##### | Episode  925 | train: +1.547869% | vald: -13.432820% [saved]
+##### | Episode  950 | train: +0.936058% | vald: -11.211313% [saved]
+##### | Episode  975 | train: -0.411718% | vald: -10.758823% [saved]
+##### | Episode 1000 | train: -1.442189% | vald: -8.686623% [saved]
+##### | Episode 1025 | train: -1.695677% | vald: -6.092007% [saved]
+##### | Episode 1050 | train: -0.862051% | vald: -7.194487%
+##### | Episode 1075 | train: +6.296849% | vald: -6.916043%
+##### | Episode 1100 | train: +5.160301% | vald: -11.682737%
+##### | Episode 1125 | train: +3.727588% | vald: -11.342274%
+##### | Episode 1150 | train: +2.341086% | vald: -12.180031%
+##### | Episode 1175 | train: -2.288519% | vald: -11.937543%
+##### | Episode 1200 | train: +1.255556% | vald: -7.940975%
+##### | Episode 1225 | train: +0.388336% | vald: -9.331057%
+##### | Episode 1250 | train: +5.476788% | vald: -11.921311%
+##### | Episode 1275 | train: +14.103251% | vald: -13.148070%
+##### | Episode 1300 | train: +17.619237% | vald: -13.315802%
+##### | Episode 1325 | train: +12.266352% | vald: -12.760837%
+##### | Episode 1350 | train: +17.941577% | vald: -17.169789%
+##### | Episode 1375 | train: +17.330106% | vald: -17.246997%
+##### | Episode 1400 | train: +12.412485% | vald: -20.474516%
+##### | Episode 1425 | train: +17.575028% | vald: -20.948012%
+##### | Episode 1450 | train: +12.162205% | vald: -22.287366%
+##### | Episode 1475 | train: +15.110422% | vald: -23.518875%
+##### | Episode 1500 | train: +13.630883% | vald: -26.750635%
+##### | Episode 1525 | train: +12.434357% | vald: -30.180050%
+##### | Episode 1550 | train: +11.148115% | vald: -28.534879%
+##### | Episode 1575 | train: +2.959468% | vald: -32.136594%
+##### | Episode 1600 | train: +0.782752% | vald: -28.426045%
+##### | Episode 1625 | train: +3.027187% | vald: -27.306191%
+##### | Episode 1650 | train: +5.898032% | vald: -26.575281%
+##### | Episode 1675 | train: +6.813969% | vald: -31.532879%
+##### | Episode 1700 | train: +6.956314% | vald: -32.862687%
+##### | Episode 1725 | train: +9.424821% | vald: -28.249214%
+##### | Episode 1750 | train: +3.478620% | vald: -30.561567%
+##### | Episode 1775 | train: +2.729208% | vald: -27.110711%
+##### | Episode 1800 | train: +4.246165% | vald: -25.394024%
+##### | Episode 1825 | train: +2.779077% | vald: -24.204515%
+##### | Episode 1850 | train: -0.757848% | vald: -21.989593%
+##### | Episode 1875 | train: +0.167379% | vald: -15.015226%
+##### | Episode 1900 | train: +2.608586% | vald: -15.815862%
+##### | Episode 1925 | train: -4.332136% | vald: -18.660871%
+##### | Episode 1950 | train: -0.041974% | vald: -20.493771%
+##### | Episode 1975 | train: -1.246136% | vald: -17.415415%
+##### | Episode 2000 | train: +1.776208% | vald: -16.509449%
+##### | Episode 2025 | train: +3.124653% | vald: -15.082280%
+##### | Episode 2050 | train: +5.227749% | vald: -15.887116%
+##### | Episode 2075 | train: +8.865025% | vald: -13.925123%
+##### | Episode 2100 | train: +9.983574% | vald: -14.506217%
+##### | Episode 2125 | train: +11.796296% | vald: -14.421116%
+##### | Episode 2150 | train: +11.770786% | vald: -16.444156%
+##### | Episode 2175 | train: +17.678230% | vald: -15.713011%
+##### | Episode 2200 | train: +18.121851% | vald: -18.684784%
+##### | Episode 2225 | train: +15.480513% | vald: -19.557758%
+##### | Episode 2250 | train: +15.481893% | vald: -17.585604%
+##### | Episode 2275 | train: +12.795796% | vald: -19.024894%
+##### | Episode 2300 | train: +8.883852% | vald: -18.987311%
+##### | Episode 2325 | train: +15.867839% | vald: -19.444668%
+##### | Episode 2350 | train: +16.768714% | vald: -17.435551%
+##### | Episode 2375 | train: +16.533987% | vald: -18.388613%
+##### | Episode 2400 | train: +14.695713% | vald: -14.094251%
+##### | Episode 2425 | train: +9.654171% | vald: -13.147513%
+##### | Episode 2450 | train: +8.754103% | vald: -9.759395%
+##### | Episode 2475 | train: +12.595812% | vald: -14.892837%
+##### | Episode 2500 | train: +11.494536% | vald: -12.712246%
+##### | Episode 2525 | train: +8.532892% | vald: -12.529024%
+##### | Episode 2550 | train: +7.867938% | vald: -11.007381%
+##### | Episode 2575 | train: +8.154538% | vald: -11.144377%
+##### | Episode 2600 | train: +12.325602% | vald: -12.816575%
+##### | Episode 2625 | train: +14.708927% | vald: -12.774637%
+##### | Episode 2650 | train: +13.085274% | vald: -11.940729%
+##### | Episode 2675 | train: +7.930165% | vald: -10.574210%
+##### | Episode 2700 | train: +6.957875% | vald: -8.292335%
+##### | Episode 2725 | train: +6.007093% | vald: -9.386813%
+##### | Episode 2750 | train: +9.252404% | vald: -9.587454%
+##### | Episode 2775 | train: +6.405016% | vald: -11.941193%
+##### | Episode 2800 | train: +3.380817% | vald: -11.550416%
+##### | Episode 2825 | train: +0.365195% | vald: -11.392329%
+##### | Episode 2850 | train: +2.480392% | vald: -10.301252%
+##### | Episode 2875 | train: +6.670024% | vald: -13.430574%
+##### | Episode 2900 | train: +4.265656% | vald: -16.723657%
+##### | Episode 2925 | train: +11.460872% | vald: -16.494902%
+##### | Episode 2950 | train: +13.239022% | vald: -17.036110%
+##### | Episode 2975 | train: +10.242746% | vald: -12.372837%
+##### | Episode 3000 | train: +9.738645% | vald: -16.473724%
+##### | Episode 3025 | train: +11.717023% | vald: -18.165617%
+##### | Episode 3050 | train: +14.233811% | vald: -21.844819%
+##### | Episode 3075 | train: +17.106816% | vald: -19.392469%
+##### | Episode 3100 | train: +14.807949% | vald: -16.159596%
+##### | Episode 3125 | train: +10.848807% | vald: -17.570629%
+##### | Episode 3150 | train: +13.983470% | vald: -15.908953%
+##### | Episode 3175 | train: +18.717991% | vald: -17.025327%
+##### | Episode 3200 | train: +23.920754% | vald: -15.787666%
+##### | Episode 3225 | train: +28.244462% | vald: -13.576975%
+##### | Episode 3250 | train: +24.625620% | vald: -9.713627%
+##### | Episode 3275 | train: +30.402410% | vald: -12.658845%
+##### | Episode 3300 | train: +37.797854% | vald: -15.942026%
+##### | Episode 3325 | train: +40.652218% | vald: -17.549182%
+##### | Episode 3350 | train: +38.411226% | vald: -17.331283%
+##### | Episode 3375 | train: +39.922966% | vald: -15.532262%
+##### | Episode 3400 | train: +44.118361% | vald: -12.659209%
+##### | Episode 3425 | train: +41.892927% | vald: -11.412179%
+##### | Episode 3450 | train: +37.423229% | vald: -11.010472%
+##### | Episode 3475 | train: +36.349114% | vald: -10.658141%
+##### | Episode 3500 | train: +35.013733% | vald: -9.578326%
+##### | Episode 3525 | train: +34.829698% | vald: -6.103142%
+##### | Episode 3550 | train: +30.092533% | vald: -5.853231% [saved]
+##### | Episode 3575 | train: +25.472330% | vald: -7.500485%
+##### | Episode 3600 | train: +26.204240% | vald: -10.975360%
+##### | Episode 3625 | train: +26.449264% | vald: -10.857853%
+##### | Episode 3650 | train: +22.304365% | vald: -13.455790%
+##### | Episode 3675 | train: +14.721501% | vald: -14.072437%
+##### | Episode 3700 | train: +6.724398% | vald: -21.908311%
+##### | Episode 3725 | train: +4.515244% | vald: -25.076639%
+##### | Episode 3750 | train: +6.725323% | vald: -26.411824%
+##### | Episode 3775 | train: +7.378472% | vald: -20.942282%
+##### | Episode 3800 | train: +4.308855% | vald: -18.766608%
+##### | Episode 3825 | train: +5.528681% | vald: -18.426639%
+##### | Episode 3850 | train: +4.675891% | vald: -18.813284%
+##### | Episode 3875 | train: -5.342179% | vald: -18.019571%
+##### | Episode 3900 | train: -8.808590% | vald: -18.367230%
+##### | Episode 3925 | train: -12.795697% | vald: -23.884936%
+##### | Episode 3950 | train: -5.534204% | vald: -23.259660%
+##### | Episode 3975 | train: -6.197789% | vald: -21.615680%
+##### | Episode 4000 | train: -5.170353% | vald: -21.572251%
+##### | Episode 4025 | train: -9.533745% | vald: -21.707476%
+##### | Episode 4050 | train: -5.674599% | vald: -21.985098%
+##### | Episode 4075 | train: -6.466632% | vald: -22.900472%
+##### | Episode 4100 | train: -4.856589% | vald: -26.447111%
+##### | Episode 4125 | train: -3.155940% | vald: -26.613371%
+##### | Episode 4150 | train: +2.954935% | vald: -22.890232%
+##### | Episode 4175 | train: +7.355732% | vald: -19.862331%
+##### | Episode 4200 | train: +14.846690% | vald: -16.281883%
+##### | Episode 4225 | train: +16.505914% | vald: -16.437138%
+##### | Episode 4250 | train: +16.593746% | vald: -16.801910%
+##### | Episode 4275 | train: +14.456635% | vald: -18.366381%
+##### | Episode 4300 | train: +17.633290% | vald: -20.429973%
+##### | Episode 4325 | train: +15.921082% | vald: -20.898498%
+##### | Episode 4350 | train: +15.205537% | vald: -23.897899%
+##### | Episode 4375 | train: +20.307711% | vald: -22.659494%
+##### | Episode 4400 | train: +22.028809% | vald: -24.739507%
+##### | Episode 4425 | train: +25.346479% | vald: -20.997117%
+##### | Episode 4450 | train: +19.960102% | vald: -21.789942%
+##### | Episode 4475 | train: +18.830054% | vald: -24.929435%
+##### | Episode 4500 | train: +18.716379% | vald: -23.025923%
+##### | Episode 4525 | train: +21.624460% | vald: -23.735189%
+##### | Episode 4550 | train: +19.329657% | vald: -20.478591%
+##### | Episode 4575 | train: +20.499993% | vald: -18.531049%
+##### | Episode 4600 | train: +18.352613% | vald: -14.123181%
+##### | Episode 4625 | train: +17.967982% | vald: -13.609120%
+##### | Episode 4650 | train: +13.178617% | vald: -16.156117%
+##### | Episode 4675 | train: +13.495383% | vald: -17.334577%
+##### | Episode 4700 | train: +9.257310% | vald: -15.775597%
+##### | Episode 4725 | train: +8.697555% | vald: -13.653073%
+##### | Episode 4750 | train: +10.643352% | vald: -12.867978%
+##### | Episode 4775 | train: +10.018702% | vald: -13.045531%
+##### | Episode 4800 | train: +6.480926% | vald: -11.829819%
+##### | Episode 4825 | train: +4.456643% | vald: -9.868469%
+##### | Episode 4850 | train: +5.329722% | vald: -7.200589%
+##### | Episode 4875 | train: +4.658442% | vald: -9.440883%
+##### | Episode 4900 | train: +4.313799% | vald: -6.918425%
+##### | Episode 4925 | train: +5.262410% | vald: -4.553560% [saved]
+##### | Episode 4950 | train: +3.923285% | vald: -3.759332% [saved]
+##### | Episode 4975 | train: +3.462307% | vald: -2.914696% [saved]
+##### | Episode 5000 | train: +0.283958% | vald: -2.274751% [saved]
+
+Save model? (Type filename to save, Enter to skip):
+>>> final
+Saved model: rl/ddpg/convlstm/1d/btc/close/final.pth
+2023-04-26 19:50:07 :   5.03%
+2023-04-26 19:50:07 :  10.01%
+2023-04-26 19:50:07 :  15.04%
+2023-04-26 19:50:07 :  20.02%
+2023-04-26 19:50:07 :  25.00%
+2023-04-26 19:50:07 :  30.03%
+2023-04-26 19:50:07 :  35.01%
+2023-04-26 19:50:07 :  40.04%
+2023-04-26 19:50:07 :  45.02%
+2023-04-26 19:50:07 :  50.00%
+2023-04-26 19:50:07 :   2.51%
+2023-04-26 19:50:07 :   5.03%
+2023-04-26 19:50:07 :  10.01%
+2023-04-26 19:50:07 :  15.08%
+2023-04-26 19:50:07 :  20.03%
+2023-04-26 19:50:07 :  25.10%
+2023-04-26 19:50:07 :  30.05%
+2023-04-26 19:50:07 :  35.12%
+2023-04-26 19:50:07 :  40.08%
+2023-04-26 19:50:08 :  45.14%
+2023-04-26 19:50:08 :  50.21%
+2023-04-26 19:50:08 :  55.16%
+2023-04-26 19:50:08 :  60.12%
+2023-04-26 19:50:08 :  65.08%
+2023-04-26 19:50:08 :  70.03%
+2023-04-26 19:50:08 :  75.10%
+2023-04-26 19:50:08 :  80.05%
+2023-04-26 19:50:09 :  85.01%
+2023-04-26 19:50:09 :  90.08%
+2023-04-26 19:50:09 :  95.03%
+2023-04-26 19:50:09 : 100.10%
+2023-04-26 19:50:09 : 105.05%
+2023-04-26 19:50:09 : 110.01%
+SAVED: rl/ddpg/convlstm/1d/btc/close/.result_2023-04-26T19.50.09.825072/source.py
+INSERTED: meta
+INSERTED: metrics
+INSERTED: stats
+INSERTED: trades
+INSERTED: equity
+INSERTED: marks
+
