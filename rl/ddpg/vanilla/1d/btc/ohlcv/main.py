@@ -121,7 +121,7 @@ class MyAgent(DDPGAgent[Obs, Action]):
     device = T.device('cuda')
     max_step = 500
     n_eps = 5000
-    n_epoch = 2
+    n_epoch = 5
     replay_size = 100*max_step
     batch_size = 256
     update_target_every = 10
@@ -147,8 +147,12 @@ class MyAgent(DDPGAgent[Obs, Action]):
                                              max_action=self.max_action).to(self.device)
         self.critic_net = DDPGCriticNet(self.obs_dim*5, self.action_dim).to(self.device)
         self.critic_net_target = DDPGCriticNet(self.obs_dim*5, self.action_dim).to(self.device)
-        self.actor_optimizer = optim.Adam(self.actor_net.parameters(), lr=1e-3)
-        self.critic_optimizer = optim.Adam(self.critic_net.parameters(), lr=1e-3)
+        self.actor_optimizer = optim.Adam(self.actor_net.parameters(),
+                                          lr=1e-3,
+                                          weight_decay=1e-3)
+        self.critic_optimizer = optim.Adam(self.critic_net.parameters(),
+                                           lr=1e-3,
+                                           weight_decay=1e-3)
 
 
 #
