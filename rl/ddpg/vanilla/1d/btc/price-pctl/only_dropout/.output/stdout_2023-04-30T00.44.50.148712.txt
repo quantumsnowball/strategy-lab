@@ -1,0 +1,16 @@
+
+Models found:
+
+1. .model/autosave_2023-04-29T14.45.49.640169.pth (2023-04-29 19:12:45)
+actor : min_action(1,) max_action(1,) net.0.weight(256, 150) net.0.bias(256,) net.4.weight(256, 256) net.4.bias(256,) net.8.weight(1, 256) net.8.bias(1,)
+critic : obs_net.0.weight(256, 150) obs_net.0.bias(256,) action_net.0.weight(256, 1) action_net.0.bias(256,) common_net.0.weight(256, 512) common_net.0.bias(256,) common_net.4.weight(1, 256) common_net.4.bias(1,)
+
+2. .model/final5000.pth (2023-04-30 00:14:34)
+actor : min_action(1,) max_action(1,) net.0.weight(256, 150) net.0.bias(256,) net.4.weight(256, 256) net.4.bias(256,) net.8.weight(1, 256) net.8.bias(1,)
+critic : obs_net.0.weight(256, 150) obs_net.0.bias(256,) action_net.0.weight(256, 1) action_net.0.bias(256,) common_net.0.weight(256, 512) common_net.0.bias(256,) common_net.4.weight(1, 256) common_net.4.bias(1,)
+
+Choose a model to load (Enter to skip):
+>>> 1
+Loaded model: .model/autosave_2023-04-29T14.45.49.640169.pth
+Start training the agent? ([y]/n):
+>>> n
