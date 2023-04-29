@@ -1,0 +1,103 @@
+
+Models found:
+
+1. .model/autosave_2023-04-28T20.07.00.725119.pth (2023-04-28 20:52:25)
+actor : min_action(1,) max_action(1,) net.0.weight(256, 600) net.0.bias(256,) net.1.weight(256,) net.1.bias(256,) net.1.running_mean(256,) net.1.running_var(256,) net.1.num_batches_tracked() net.3.weight(256, 256) net.3.bias(256,) net.4.weight(256,) net.4.bias(256,) net.4.running_mean(256,) net.4.running_var(256,) net.4.num_batches_tracked() net.6.weight(1, 256) net.6.bias(1,)
+critic : obs_net.0.weight(256, 600) obs_net.0.bias(256,) obs_net.1.weight(256,) obs_net.1.bias(256,) obs_net.1.running_mean(256,) obs_net.1.running_var(256,) obs_net.1.num_batches_tracked() action_net.0.weight(256, 1) action_net.0.bias(256,) action_net.1.weight(256,) action_net.1.bias(256,) action_net.1.running_mean(256,) action_net.1.running_var(256,) action_net.1.num_batches_tracked() common_net.0.weight(256, 512) common_net.0.bias(256,) common_net.1.weight(256,) common_net.1.bias(256,) common_net.1.running_mean(256,) common_net.1.running_var(256,) common_net.1.num_batches_tracked() common_net.3.weight(1, 256) common_net.3.bias(1,)
+
+2. .model/autosave_2023-04-28T22.23.26.329957.pth (2023-04-29 00:11:43)
+actor : min_action(1,) max_action(1,) net.0.weight(256, 600) net.0.bias(256,) net.1.weight(256,) net.1.bias(256,) net.1.running_mean(256,) net.1.running_var(256,) net.1.num_batches_tracked() net.4.weight(256, 256) net.4.bias(256,) net.5.weight(256,) net.5.bias(256,) net.5.running_mean(256,) net.5.running_var(256,) net.5.num_batches_tracked() net.8.weight(1, 256) net.8.bias(1,)
+critic : obs_net.0.weight(256, 600) obs_net.0.bias(256,) obs_net.1.weight(256,) obs_net.1.bias(256,) obs_net.1.running_mean(256,) obs_net.1.running_var(256,) obs_net.1.num_batches_tracked() action_net.0.weight(256, 1) action_net.0.bias(256,) action_net.1.weight(256,) action_net.1.bias(256,) action_net.1.running_mean(256,) action_net.1.running_var(256,) action_net.1.num_batches_tracked() common_net.0.weight(256, 512) common_net.0.bias(256,) common_net.1.weight(256,) common_net.1.bias(256,) common_net.1.running_mean(256,) common_net.1.running_var(256,) common_net.1.num_batches_tracked() common_net.4.weight(1, 256) common_net.4.bias(1,)
+
+3. final.pth (2023-04-29 01:30:49)
+actor : min_action(1,) max_action(1,) net.0.weight(256, 600) net.0.bias(256,) net.1.weight(256,) net.1.bias(256,) net.1.running_mean(256,) net.1.running_var(256,) net.1.num_batches_tracked() net.4.weight(256, 256) net.4.bias(256,) net.5.weight(256,) net.5.bias(256,) net.5.running_mean(256,) net.5.running_var(256,) net.5.num_batches_tracked() net.8.weight(1, 256) net.8.bias(1,)
+critic : obs_net.0.weight(256, 600) obs_net.0.bias(256,) obs_net.1.weight(256,) obs_net.1.bias(256,) obs_net.1.running_mean(256,) obs_net.1.running_var(256,) obs_net.1.num_batches_tracked() action_net.0.weight(256, 1) action_net.0.bias(256,) action_net.1.weight(256,) action_net.1.bias(256,) action_net.1.running_mean(256,) action_net.1.running_var(256,) action_net.1.num_batches_tracked() common_net.0.weight(256, 512) common_net.0.bias(256,) common_net.1.weight(256,) common_net.1.bias(256,) common_net.1.running_mean(256,) common_net.1.running_var(256,) common_net.1.num_batches_tracked() common_net.4.weight(1, 256) common_net.4.bias(1,)
+
+Choose a model to load (Enter to skip):
+>>> 
+Start training the agent? ([y]/n):
+>>> 
+######################### | Episode   25 | train: -69.743999% | vald: -147.315593%
+######################### | Episode   50 | train: -26.363882% | vald: -142.879417%
+######################### | Episode   75 | train: +1.803257% | vald: -141.376434%
+######################### | Episode  100 | train: +12.927791% | vald: -132.506626%
+######################### | Episode  125 | train: +23.002651% | vald: -131.270203% [saved]
+######################### | Episode  150 | train: +29.097594% | vald: -129.873734% [saved]
+######################### | Episode  175 | train: +25.231168% | vald: -127.500229% [saved]
+######################### | Episode  200 | train: +23.076680% | vald: -127.911564%
+######################### | Episode  225 | train: +14.541899% | vald: -128.613983%
+######################### | Episode  250 | train: +5.948050% | vald: -128.906556%
+######################### | Episode  275 | train: +0.911148% | vald: -131.617606%
+######################### | Episode  300 | train: -7.807952% | vald: -134.839922%
+######################### | Episode  325 | train: -15.297775% | vald: -137.622769%
+######################### | Episode  350 | train: -22.153423% | vald: -139.789324%
+######################### | Episode  375 | train: -23.969838% | vald: -140.427052%
+######################### | Episode  400 | train: -25.989023% | vald: -140.428721%
+######################### | Episode  425 | train: -27.502986% | vald: -141.149342%
+######################### | Episode  450 | train: -28.348756% | vald: -141.494656%
+######################### | Episode  475 | train: -28.010230% | vald: -140.863363%
+######################### | Episode  500 | train: -29.204331% | vald: -140.751976%
+######################### | Episode  525 | train: -25.933025% | vald: -139.194450%
+######################### | Episode  550 | train: -28.614661% | vald: -138.481658%
+######################### | Episode  575 | train: -34.855612% | vald: -138.324455%
+######################### | Episode  600 | train: -43.436711% | vald: -141.645282%
+######################### | Episode  625 | train: -54.493702% | vald: -145.431829%
+######################### | Episode  650 | train: -66.976721% | vald: -150.757551%
+######################### | Episode  675 | train: -76.721119% | vald: -156.632392%
+######################### | Episode  700 | train: -86.784337% | vald: -161.660434%
+######################### | Episode  725 | train: -93.743583% | vald: -166.465296%
+######################### | Episode  750 | train: -99.678556% | vald: -171.356595%
+######################### | Episode  775 | train: -106.672180% | vald: -174.888466%
+######################### | Episode  800 | train: -110.932359% | vald: -177.801371%
+######################### | Episode  825 | train: -115.151485% | vald: -180.744934%
+######################### | Episode  850 | train: -118.629627% | vald: -183.615495%
+######################### | Episode  875 | train: -125.116140% | vald: -187.495742%
+######################### | Episode  900 | train: -130.857762% | vald: -191.553337%
+######################### | Episode  925 | train: -136.188297% | vald: -194.665533%
+######################### | Episode  950 | train: -142.491834% | vald: -198.296314%
+######################### | Episode  975 | train: -150.277289% | vald: -203.122830%
+######################### | Episode 1000 | train: -157.253227% | vald: -207.770169%
+######################### | Episode 1025 | train: -166.615177% | vald: -213.490893%
+######################### | Episode 1050 | train: -174.406675% | vald: -218.871545%
+######################### | Episode 1075 | train: -176.437581% | vald: -222.129698%
+######################### | Episode 1100 | train: -169.203835% | vald: -222.453485%
+######################### | Episode 1125 | train: -158.743530% | vald: -219.480261%
+######################### | Episode 1150 | train: -147.181044% | vald: -215.113084%
+######################### | Episode 1175 | train: -134.764295% | vald: -210.801061%
+######################### | Episode 1200 | train: -120.837478% | vald: -206.425287%
+######################### | Episode 1225 | train: -108.554208% | vald: -202.296882%
+######################### | Episode 1250 | train: -97.069620% | vald: -197.517112%
+######################### | Episode 1275 | train: -82.447773% | vald: -193.593389%
+######################### | Episode 1300 | train: -68.811170% | vald: -189.614611%
+######################### | Episode 1325 | train: -53.846260% | vald: -186.685545%
+######################### | Episode 1350 | train: -38.096934% | vald: -181.533047%
+######################### | Episode 1375 | train: -24.354116% | vald: -176.666122%
+######################### | Episode 1400 | train: -11.396220% | vald: -170.844757%
+######################### | Episode 1425 | train: +3.587462% | vald: -165.387547%
+######################### | Episode 1450 | train: +16.340154% | vald: -159.598451%
+######################### | Episode 1475 | train: +32.343854% | vald: -154.232979%
+######################### | Episode 1500 | train: +50.180012% | vald: -150.108609%
+######################### | Episode 1525 | train: +67.437982% | vald: -145.404450%
+######################### | Episode 1550 | train: +84.188455% | vald: -140.276634%
+######################### | Episode 1575 | train: +96.999348% | vald: -138.611571%
+######################### | Episode 1600 | train: +105.266493% | vald: -136.397428%
+######################### | Episode 1625 | train: +111.642468% | vald: -136.341284%
+######################### | Episode 1650 | train: +119.160190% | vald: -135.989041%
+######################### | Episode 1675 | train: +124.875757% | vald: -134.968703%
+######################### | Episode 1700 | train: +131.963274% | vald: -134.386174%
+######################### | Episode 1725 | train: +137.127851% | vald: -133.366967%
+######################### | Episode 1750 | train: +144.596032% | vald: -132.421710%
+######################### | Episode 1775 | train: +150.040298% | vald: -129.772035%
+######################### | Episode 1800 | train: +153.680722% | vald: -127.154574% [saved]
+######################### | Episode 1825 | train: +157.515833% | vald: -122.284644% [saved]
+######################### | Episode 1850 | train: +159.132293% | vald: -122.022784% [saved]
+######################### | Episode 1875 | train: +162.548687% | vald: -120.361706% [saved]
+######################### | Episode 1900 | train: +166.709791% | vald: -119.022073% [saved]
+######################### | Episode 1925 | train: +169.475680% | vald: -118.259590% [saved]
+######################### | Episode 1950 | train: +175.044613% | vald: -117.524467% [saved]
+######################### | Episode 1975 | train: +177.868470% | vald: -114.350791% [saved]
+######################### | Episode 2000 | train: +178.677265% | vald: -110.467352% [saved]
+
+Save model? (Type filename to save, Enter to skip):
+>>> final2000
+Saved model: rl/ddpg/vanilla/1d/btc/ohlc-pctl/final2000.pth
