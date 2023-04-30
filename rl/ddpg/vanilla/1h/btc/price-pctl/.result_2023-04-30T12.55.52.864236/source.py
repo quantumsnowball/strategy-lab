@@ -6,7 +6,8 @@ from gymnasium.spaces import Box
 from mlbox.agent.ddpg import DDPGAgent
 from mlbox.agent.ddpg.nn import DDPGActorNet, DDPGCriticNet
 from mlbox.trenv import BasicTrEnv
-from mlbox.utils import crop, pnl_ratio
+from mlbox.utils import crop
+from tabox.momentum import price_percentile
 from trbox.backtest import Backtest
 from trbox.broker.paper import PaperEX
 from trbox.event.market import OhlcvWindow
@@ -24,7 +25,7 @@ TRAIN_END = '2022-09-30'
 VALD_START = '2022-10-01'
 VALD_END = '2022-12-31'
 # test
-TEST_START = '2023-01-01'
+TEST_START = '2022-07-01'
 TEST_END = '2023-03-31'
 
 SYMBOL = 'BTCUSDT'
@@ -35,7 +36,6 @@ FREQ = '1h'
 STEP = 0.2
 START_LV = 0.01
 N_FEATURE = 150
-MODEL_NAME = 'model.pth'
 
 Obs = npt.NDArray[np.float32]
 Action = npt.NDArray[np.float32]
@@ -47,7 +47,7 @@ Reward = np.float32
 #
 def observe(my: Context[OhlcvWindow]) -> Obs:
     win = my.event.win['Close']
-    pnlr = pnl_ratio(win)
+    pnlr = price_percentile(win)
     obs = np.array(pnlr[-N_FEATURE:], dtype=np.float32)
     return obs
 
@@ -119,12 +119,12 @@ class ValdEnv(MyEnv):
 class MyAgent(DDPGAgent[Obs, Action]):
     device = T.device('cuda')
     max_step = 500
-    n_eps = 5000
+    n_eps = 3000
     n_epoch = 2
     replay_size = 100*max_step
     batch_size = 256
     update_target_every = 10
-    print_hash_every = 5
+    print_hash_every = 1
     rolling_reward_ma = 20
     report_progress_every = 25
     auto_save = True
@@ -140,12 +140,16 @@ class MyAgent(DDPGAgent[Obs, Action]):
         self.max_noise = self.max_action * 1.0
         self.actor_net = DDPGActorNet(self.obs_dim, self.action_dim,
                                       min_action=self.min_action,
-                                      max_action=self.max_action).to(self.device)
+                                      max_action=self.max_action,
+                                      batch_norm=True).to(self.device)
         self.actor_net_target = DDPGActorNet(self.obs_dim, self.action_dim,
                                              min_action=self.min_action,
-                                             max_action=self.max_action).to(self.device)
-        self.critic_net = DDPGCriticNet(self.obs_dim, self.action_dim).to(self.device)
-        self.critic_net_target = DDPGCriticNet(self.obs_dim, self.action_dim).to(self.device)
+                                             max_action=self.max_action,
+                                             batch_norm=True).to(self.device)
+        self.critic_net = DDPGCriticNet(self.obs_dim, self.action_dim,
+                                        batch_norm=True).to(self.device)
+        self.critic_net_target = DDPGCriticNet(self.obs_dim, self.action_dim,
+                                               batch_norm=True).to(self.device)
         self.actor_optimizer = optim.Adam(self.actor_net.parameters(), lr=1e-3)
         self.critic_optimizer = optim.Adam(self.critic_net.parameters(), lr=1e-3)
 
@@ -170,7 +174,7 @@ def agent_step(my: Context[OhlcvWindow]):
         action = agent.decide(obs)
         target_weight = act(my, action)
         # mark
-        my.mark['pnlr'] = pnl_ratio(my.event.win['Close'])[-1]
+        my.mark['pnlr'] = price_percentile(my.event.win['Close'])[-1]
         my.mark['action'] = action.item()
         my.mark['target_weight'] = target_weight
         my.mark['reward'] = grant(my)
@@ -197,6 +201,6 @@ backtest = Backtest(
 # main
 #
 agent = MyAgent()
-agent.prompt(MODEL_NAME)
+agent.prompt()
 backtest.run()
 backtest.result.save()
