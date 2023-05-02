@@ -1,0 +1,16 @@
+
+Models found:
+
+1. .model/autosave_2023-05-02T01.41.20.261040.pth (2023-05-02 02:21:38)
+actor : min_action(1,) max_action(1,) lstm.weight_ih_l0(256, 1) lstm.weight_hh_l0(256, 64) lstm.bias_ih_l0(256,) lstm.bias_hh_l0(256,) lstm_post.0.weight(64,) lstm_post.0.bias(64,) lstm_post.0.running_mean(64,) lstm_post.0.running_var(64,) lstm_post.0.num_batches_tracked() fc.0.weight(128, 3200) fc.0.bias(128,) fc.1.weight(128,) fc.1.bias(128,) fc.1.running_mean(128,) fc.1.running_var(128,) fc.1.num_batches_tracked() fc.4.weight(128, 128) fc.4.bias(128,) fc.5.weight(128,) fc.5.bias(128,) fc.5.running_mean(128,) fc.5.running_var(128,) fc.5.num_batches_tracked() fc.8.weight(1, 128) fc.8.bias(1,)
+critic : lstm.weight_ih_l0(256, 1) lstm.weight_hh_l0(256, 64) lstm.bias_ih_l0(256,) lstm.bias_hh_l0(256,) lstm_post.0.weight(64,) lstm_post.0.bias(64,) lstm_post.0.running_mean(64,) lstm_post.0.running_var(64,) lstm_post.0.num_batches_tracked() obs_net.0.weight(128, 3200) obs_net.0.bias(128,) obs_net.1.weight(128,) obs_net.1.bias(128,) obs_net.1.running_mean(128,) obs_net.1.running_var(128,) obs_net.1.num_batches_tracked() action_net.0.weight(128, 1) action_net.0.bias(128,) action_net.1.weight(128,) action_net.1.bias(128,) action_net.1.running_mean(128,) action_net.1.running_var(128,) action_net.1.num_batches_tracked() common_net.0.weight(128, 256) common_net.0.bias(128,) common_net.1.weight(128,) common_net.1.bias(128,) common_net.1.running_mean(128,) common_net.1.running_var(128,) common_net.1.num_batches_tracked() common_net.4.weight(1, 128) common_net.4.bias(1,)
+
+2. stopped650.pth (2023-05-02 03:02:17)
+actor : min_action(1,) max_action(1,) lstm.weight_ih_l0(256, 1) lstm.weight_hh_l0(256, 64) lstm.bias_ih_l0(256,) lstm.bias_hh_l0(256,) lstm_post.0.weight(64,) lstm_post.0.bias(64,) lstm_post.0.running_mean(64,) lstm_post.0.running_var(64,) lstm_post.0.num_batches_tracked() fc.0.weight(128, 3200) fc.0.bias(128,) fc.1.weight(128,) fc.1.bias(128,) fc.1.running_mean(128,) fc.1.running_var(128,) fc.1.num_batches_tracked() fc.4.weight(128, 128) fc.4.bias(128,) fc.5.weight(128,) fc.5.bias(128,) fc.5.running_mean(128,) fc.5.running_var(128,) fc.5.num_batches_tracked() fc.8.weight(1, 128) fc.8.bias(1,)
+critic : lstm.weight_ih_l0(256, 1) lstm.weight_hh_l0(256, 64) lstm.bias_ih_l0(256,) lstm.bias_hh_l0(256,) lstm_post.0.weight(64,) lstm_post.0.bias(64,) lstm_post.0.running_mean(64,) lstm_post.0.running_var(64,) lstm_post.0.num_batches_tracked() obs_net.0.weight(128, 3200) obs_net.0.bias(128,) obs_net.1.weight(128,) obs_net.1.bias(128,) obs_net.1.running_mean(128,) obs_net.1.running_var(128,) obs_net.1.num_batches_tracked() action_net.0.weight(128, 1) action_net.0.bias(128,) action_net.1.weight(128,) action_net.1.bias(128,) action_net.1.running_mean(128,) action_net.1.running_var(128,) action_net.1.num_batches_tracked() common_net.0.weight(128, 256) common_net.0.bias(128,) common_net.1.weight(128,) common_net.1.bias(128,) common_net.1.running_mean(128,) common_net.1.running_var(128,) common_net.1.num_batches_tracked() common_net.4.weight(1, 128) common_net.4.bias(1,)
+
+Choose a model to load (Enter to skip):
+>>> 2
+Loaded model: stopped650.pth
+Start training the agent? ([y]/n):
+>>> n

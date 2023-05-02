@@ -1,0 +1,7 @@
+Start training the agent? ([y]/n):
+>>> 
+
+Manually stopped training loop
+
+Save model? (Type filename to save, Enter to skip):
+>>> 
