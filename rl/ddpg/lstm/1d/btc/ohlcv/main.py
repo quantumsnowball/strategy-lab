@@ -1,5 +1,7 @@
+from typing import Any
 import numpy as np
 import numpy.typing as npt
+from tabox.momentum import price_percentile
 import torch as T
 import torch.optim as optim
 from gymnasium.spaces import Box
@@ -24,17 +26,27 @@ TRAIN_END = '2019-12-31'
 VALD_START = '2020-01-01'
 VALD_END = '2021-12-31'
 # test
-TEST_START = '2022-01-01'
+TEST_START = '2020-01-01'
 TEST_END = '2023-03-31'
 
+# params
 SYMBOL = 'BTC-USD'
 SYMBOLS = (SYMBOL, )
 LENGTH = 200
 INTERVAL = 5
 START_LV = 0.01
-N_FEATURE = 150
+N_FEATURE = 50
 FREQ = '1d'
 
+# hyper params
+HIDDEN_SIZE = 128
+LSTM_LAYERS_N = 1
+LSTM_HIDDEN_SIZE = 16
+BATCH_NORM = True
+DROPOUT = 0.1
+WEIGHT_DECAY = 0
+
+# types
 Obs = npt.NDArray[np.float32]
 Action = npt.NDArray[np.float32]
 Reward = np.float32
@@ -119,12 +131,12 @@ class ValdEnv(MyEnv):
 class MyAgent(DDPGAgent[Obs, Action]):
     device = T.device('cuda')
     max_step = 500
-    n_eps = 5000
-    n_epoch = 5
-    replay_size = 500*max_step
-    batch_size = 256
+    n_eps = 2500
+    n_epoch = 100
+    replay_size = 100*max_step
+    batch_size = 128
     update_target_every = 10
-    print_hash_every = 5
+    print_hash_every = 1
     rolling_reward_ma = 20
     report_progress_every = 25
     auto_save = True
@@ -138,24 +150,34 @@ class MyAgent(DDPGAgent[Obs, Action]):
         self.vald_env = ValdEnv()
         self.min_noise = 0.2
         self.max_noise = self.max_action * 2.0
-        self.actor_net = LSTM_DDPGActorNet(self.obs_dim, self.action_dim,
-                                           min_action=self.min_action,
-                                           max_action=self.max_action,
-                                           lstm_input_dim=5).to(self.device)
-        self.actor_net_target = LSTM_DDPGActorNet(self.obs_dim, self.action_dim,
-                                                  min_action=self.min_action,
-                                                  max_action=self.max_action,
-                                                  lstm_input_dim=5).to(self.device)
-        self.critic_net = LSTM_DDPGCriticNet(self.obs_dim, self.action_dim,
-                                             lstm_input_dim=5).to(self.device)
-        self.critic_net_target = LSTM_DDPGCriticNet(self.obs_dim, self.action_dim,
-                                                    lstm_input_dim=5).to(self.device)
+        actor_kwargs: dict[str, Any] = dict(
+            min_action=self.min_action,
+            max_action=self.max_action,
+            lstm_layers_n=LSTM_LAYERS_N,
+            hidden_dim=HIDDEN_SIZE,
+            batch_norm=BATCH_NORM,
+            dropout=DROPOUT,
+            lstm_input_dim=5,
+            lstm_hidden_dim=LSTM_HIDDEN_SIZE,
+        )
+        critic_kwargs: dict[str, Any] = dict(
+            lstm_layers_n=LSTM_LAYERS_N,
+            hidden_dim=HIDDEN_SIZE,
+            batch_norm=BATCH_NORM,
+            dropout=DROPOUT,
+            lstm_input_dim=5,
+            lstm_hidden_dim=LSTM_HIDDEN_SIZE,
+        )
+        self.actor_net = LSTM_DDPGActorNet(self.obs_dim, self.action_dim, **actor_kwargs).to(self.device)
+        self.actor_net_target = LSTM_DDPGActorNet(self.obs_dim, self.action_dim, **actor_kwargs).to(self.device)
+        self.critic_net = LSTM_DDPGCriticNet(self.obs_dim, self.action_dim, **critic_kwargs).to(self.device)
+        self.critic_net_target = LSTM_DDPGCriticNet(self.obs_dim, self.action_dim, **critic_kwargs).to(self.device)
         self.actor_optimizer = optim.Adam(self.actor_net.parameters(),
-                                          lr=1e-2,
-                                          weight_decay=1e-3)
+                                          lr=1e-3,
+                                          weight_decay=WEIGHT_DECAY)
         self.critic_optimizer = optim.Adam(self.critic_net.parameters(),
-                                           lr=1e-2,
-                                           weight_decay=1e-3)
+                                           lr=1e-3,
+                                           weight_decay=WEIGHT_DECAY)
 
 
 #
@@ -178,6 +200,7 @@ def agent_step(my: Context[OhlcvWindow]):
         action = agent.decide(obs)
         target_weight = act(my, action)
         # mark
+        my.mark['price-pctl'] = price_percentile(my.event.win['Close'])[-1]
         my.mark['action'] = action.item()
         my.mark['target_weight'] = target_weight
         my.mark['reward'] = grant(my)
