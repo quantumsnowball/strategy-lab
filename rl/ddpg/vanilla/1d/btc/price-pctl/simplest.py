@@ -8,6 +8,8 @@ from mlbox.agent.ddpg.nn import DDPGActorNet, DDPGCriticNet
 from mlbox.trenv import BasicTrEnv
 from mlbox.utils import crop
 from tabox.momentum import price_percentile
+from typing_extensions import override
+
 from trbox.backtest import Backtest
 from trbox.broker.paper import PaperEX
 from trbox.event.market import OhlcvWindow
@@ -16,7 +18,6 @@ from trbox.strategy import Strategy
 from trbox.strategy.context import Context
 from trbox.strategy.types import Hook
 from trbox.trader import Trader
-from typing_extensions import override
 
 # train
 TRAIN_START = '2017-01-01'
@@ -120,9 +121,9 @@ class MyAgent(DDPGAgent[Obs, Action]):
     device = T.device('cuda')
     max_step = 5000
     n_eps = 5000
-    n_epoch = 20
+    n_epoch = 2
     replay_size = 100*max_step
-    batch_size = 32
+    batch_size = 128
     update_target_every = 10
     print_hash_every = 1
     rolling_reward_ma = 20
@@ -140,18 +141,26 @@ class MyAgent(DDPGAgent[Obs, Action]):
         self.max_noise = self.max_action * 1.0
         self.actor_net = DDPGActorNet(self.obs_dim, self.action_dim,
                                       min_action=self.min_action,
-                                      max_action=self.max_action).to(self.device)
+                                      max_action=self.max_action,
+                                      batch_norm=False,
+                                      dropout=0).to(self.device)
         self.actor_net_target = DDPGActorNet(self.obs_dim, self.action_dim,
                                              min_action=self.min_action,
-                                             max_action=self.max_action).to(self.device)
-        self.critic_net = DDPGCriticNet(self.obs_dim, self.action_dim).to(self.device)
-        self.critic_net_target = DDPGCriticNet(self.obs_dim, self.action_dim).to(self.device)
+                                             max_action=self.max_action,
+                                             batch_norm=False,
+                                             dropout=0).to(self.device)
+        self.critic_net = DDPGCriticNet(self.obs_dim, self.action_dim,
+                                        batch_norm=False,
+                                        dropout=0).to(self.device)
+        self.critic_net_target = DDPGCriticNet(self.obs_dim, self.action_dim,
+                                               batch_norm=False,
+                                               dropout=0).to(self.device)
         self.actor_optimizer = optim.Adam(self.actor_net.parameters(),
                                           lr=1e-3,
-                                          weight_decay=1e-3)
+                                          weight_decay=0)
         self.critic_optimizer = optim.Adam(self.critic_net.parameters(),
                                            lr=1e-3,
-                                           weight_decay=1e-3)
+                                           weight_decay=0)
 
 
 #

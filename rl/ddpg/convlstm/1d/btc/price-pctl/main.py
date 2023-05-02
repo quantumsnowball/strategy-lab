@@ -7,7 +7,8 @@ from mlbox.agent.ddpg import DDPGAgent
 from mlbox.agent.ddpg.nn.convlstm import (ConvLSTM_DDPGActorNet,
                                           ConvLSTM_DDPGCriticNet)
 from mlbox.trenv import BasicTrEnv
-from mlbox.utils import crop, pnl_ratio
+from mlbox.utils import crop
+from tabox.momentum import price_percentile
 from trbox.backtest import Backtest
 from trbox.broker.paper import PaperEX
 from trbox.event.market import OhlcvWindow
@@ -35,7 +36,7 @@ INTERVAL = 5
 STEP = 0.2
 START_LV = 0.01
 N_FEATURE = 150
-MODEL_NAME = 'model.pth'
+FREQ = '1d'
 
 Obs = npt.NDArray[np.float32]
 Action = npt.NDArray[np.float32]
@@ -46,8 +47,8 @@ Reward = np.float32
 # routine
 #
 def observe(my: Context[OhlcvWindow]) -> Obs:
-    win = my.event.win['Close']
-    pnlr = pnl_ratio(win)
+    win = my.event.win[['Close']]
+    pnlr = price_percentile(win)
     obs = np.array(pnlr[-N_FEATURE:], dtype=np.float32)
     return obs
 
@@ -84,6 +85,7 @@ class MyEnv(BasicTrEnv[Obs, Action]):
     interval = INTERVAL
     symbol = SYMBOL
     length = LENGTH
+    freq = '1d'
 
     @override
     def observe(self, my: Context[OhlcvWindow]) -> Obs:
@@ -169,7 +171,7 @@ def agent_step(my: Context[OhlcvWindow]):
         action = agent.decide(obs)
         target_weight = act(my, action)
         # mark
-        my.mark['pnlr'] = pnl_ratio(my.event.win['Close'])[-1]
+        my.mark['pnlr'] = price_percentile(my.event.win['Close'])[-1]
         my.mark['action'] = action.item()
         my.mark['target_weight'] = target_weight
         my.mark['reward'] = grant(my)
@@ -196,6 +198,6 @@ backtest = Backtest(
 # main
 #
 agent = MyAgent()
-agent.prompt(MODEL_NAME)
+agent.prompt()
 backtest.run()
 backtest.result.save()
