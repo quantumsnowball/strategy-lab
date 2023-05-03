@@ -1,0 +1,14 @@
+
+Models found:
+
+1. .model/autosave_2023-05-03T14.18.29.657373.pth (2023-05-03 14:28:05)
+base.0.weight(128, 50) base.0.bias(128,) base.1.weight(128,) base.1.bias(128,) base.1.running_mean(128,) base.1.running_var(128,) base.1.num_batches_tracked() actor.0.weight(3, 128) actor.0.bias(3,) critic.0.weight(1, 128) critic.0.bias(1,)
+
+2. final2500.pth (2023-05-03 17:47:02)
+base.0.weight(128, 50) base.0.bias(128,) base.1.weight(128,) base.1.bias(128,) base.1.running_mean(128,) base.1.running_var(128,) base.1.num_batches_tracked() actor.0.weight(3, 128) actor.0.bias(3,) critic.0.weight(1, 128) critic.0.bias(1,)
+
+Choose a model to load (Enter to skip):
+>>> 1
+Loaded model: .model/autosave_2023-05-03T14.18.29.657373.pth
+Start training the agent? ([y]/n):
+>>> n
