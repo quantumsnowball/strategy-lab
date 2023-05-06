@@ -1,0 +1,11 @@
+Start training the agent? ([y]/n):
+>>> 
+> /home/wykong/Dev/strategy-lab/rl/a2c/lstm/1d/btc/abs3-rel7/rsi_leverage/5-levels/main.py(79)observe()
+-> return obs
+(Pdb) obs.shape
+(150, 6)
+(Pdb) 
+Manually stopped training loop
+
+Save model? (Type filename to save, Enter to skip):
+>>> 

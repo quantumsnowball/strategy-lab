@@ -1,0 +1,12 @@
+Start training the agent? ([y]/n):
+>>> 
+> /home/wykong/Dev/strategy-lab/rl/a2c/lstm/1d/btc/abs3-rel7/rsi_leverage/5-levels/main.py(76)observe()
+-> ohlcv = my.event.win
+(Pdb) rsi.shape
+(199, 5)
+(Pdb) 
+
+Manually stopped training loop
+
+Save model? (Type filename to save, Enter to skip):
+>>> 

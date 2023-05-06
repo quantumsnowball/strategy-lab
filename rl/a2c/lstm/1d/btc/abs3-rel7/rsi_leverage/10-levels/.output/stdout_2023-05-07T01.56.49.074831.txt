@@ -1,0 +1,14 @@
+
+Models found:
+
+1. .model/autosave_2023-05-06T22.09.43.767934.pth (2023-05-07 01:02:38)
+lstm.weight_ih_l0(256, 6) lstm.weight_hh_l0(256, 64) lstm.bias_ih_l0(256,) lstm.bias_hh_l0(256,) lstm_post.0.weight(64,) lstm_post.0.bias(64,) lstm_post.0.running_mean(64,) lstm_post.0.running_var(64,) lstm_post.0.num_batches_tracked() base.0.weight(128, 9600) base.0.bias(128,) base.1.weight(128,) base.1.bias(128,) base.1.running_mean(128,) base.1.running_var(128,) base.1.num_batches_tracked() actor.0.weight(3, 128) actor.0.bias(3,) critic.0.weight(1, 128) critic.0.bias(1,)
+
+2. final2000.pth (2023-05-07 01:56:23)
+lstm.weight_ih_l0(256, 6) lstm.weight_hh_l0(256, 64) lstm.bias_ih_l0(256,) lstm.bias_hh_l0(256,) lstm_post.0.weight(64,) lstm_post.0.bias(64,) lstm_post.0.running_mean(64,) lstm_post.0.running_var(64,) lstm_post.0.num_batches_tracked() base.0.weight(128, 9600) base.0.bias(128,) base.1.weight(128,) base.1.bias(128,) base.1.running_mean(128,) base.1.running_var(128,) base.1.num_batches_tracked() actor.0.weight(3, 128) actor.0.bias(3,) critic.0.weight(1, 128) critic.0.bias(1,)
+
+Choose a model to load (Enter to skip):
+>>> 1
+Loaded model: .model/autosave_2023-05-06T22.09.43.767934.pth
+Start training the agent? ([y]/n):
+>>> n
